@@ -58,13 +58,29 @@ print(evaluate(prime_str="To be, or not to be", predict_len=200))
 ```
 
 ## Advantages
-### Character-Based Model:
-✅ Can generate words not seen in training data.
-✅ More flexible for different text styles.
+### Character-Based Language Model
+* **Handles Out-of-Vocabulary (OOV) Words:** Character-based models work at the level of
+individual characters, so they can handle words that the model has never seen before, such as slang,
+typos, or newly created words. This makes them particularly robust for dynamic and noisy text
+data, like social media or usernames.
+* **Effective for Morphologically Rich Languages:** In languages with complex word structures
+(e.g., Turkish or Finnish), character-based models can naturally learn the relationships between
+prefixes, suffixes, and root words, making them highly effective.
+* **Compact Vocabulary:** Since the model uses individual characters instead of words, the vocabulary size is much smaller. This reduces memory requirements and simplifies the model.
+* **Flexible with Input Lengths:** Character-based models can handle unusually long or short words,
+such as scientific terms, URLs, or rare names, without issues.
 
-### Word-Based Model:
-✅ Faster training and inference.
-✅ Better for languages with large vocabularies.
+### Word-Based Language Model
+* **Faster Training and Inference:** Word-based models process entire words, which reduces the
+number of steps required to analyze text compared to character-level models. This makes them
+faster and more computationally efficient.
+* **Better Semantic Understanding:** Word embeddings used in word-based models often encode
+rich semantic and syntactic information, allowing these models to capture the meaning and relationships between words more effectively.
+* **Efficient Sequence Lengths:** A word-based model requires fewer tokens to represent a sentence
+compared to a character-based model. This makes processing long texts more efficient.
+* **High Performance on Standard Text:** For tasks involving formal or standard text, such as
+news articles or essays, word-based models often perform better because they can directly leverage
+the meaning of entire words
 
 ## Usage
 To use the model, ensure all dependencies are installed and run the Jupyter Notebook with:
